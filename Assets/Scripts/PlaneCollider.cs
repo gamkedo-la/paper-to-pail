@@ -10,15 +10,18 @@ public class PlaneCollider : MonoBehaviour
 
 	private bool won = false;
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if ( won )
+	private void OnTriggerEnter(Collider other) {
+		if (won) {
 			return;
+		}
 
 		if (other.gameObject.tag == "Trashcan") {
-			OnWin?.Invoke( );
-			Invoke( nameof( Win ), 3f );
+			OnWin?.Invoke();
+			Invoke(nameof(Win), 3f);
 			won = true;
+		} else if (other.gameObject.tag == "Boost") {
+			gameObject.GetComponent<FlightController>().speed *= 1.5f;
+			other.gameObject.SetActive(false);
 		} else if (other.gameObject.tag != "Player") {
 			SceneManager.LoadScene("Loose");
 		}

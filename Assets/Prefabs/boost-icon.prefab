@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6030801496540056026}
   m_Layer: 0
   m_Name: boost-icon
-  m_TagString: Pickup
+  m_TagString: Boost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
