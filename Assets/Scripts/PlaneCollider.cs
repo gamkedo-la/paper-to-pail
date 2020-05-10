@@ -20,7 +20,7 @@ public class PlaneCollider : MonoBehaviour
 			Invoke(nameof(Win), 3f);
 			won = true;
 		} else if (other.gameObject.tag == "Boost") {
-			gameObject.GetComponent<FlightController>().speed *= 1.5f;
+			gameObject.GetComponent<FlightController>().speed *= 2f;
 			other.gameObject.SetActive(false);
 		} else if (other.gameObject.tag != "Player") {
 			SceneManager.LoadScene("Loose");
