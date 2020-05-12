@@ -9684,6 +9684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7133506929640095053}
   - component: {fileID: 7133506929640095052}
+  - component: {fileID: 5271187572601487733}
   - component: {fileID: 7133506929640095055}
   - component: {fileID: 7133506929640095054}
   - component: {fileID: 7133506929640095048}
@@ -9726,6 +9727,19 @@ MonoBehaviour:
   bank: 60
   pull: 40
   pickup: 5
+--- !u!114 &5271187572601487733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7133506929640095059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad2f00662db6264ebc4e3c4a2c15884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockoffCamera: 0
 --- !u!114 &7133506929640095055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9785,6 +9799,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5271187572601487733}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnLose:
     m_PersistentCalls:
       m_Calls:
@@ -9823,6 +9848,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7133506929640095054}
         m_MethodName: set_isTrigger
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5271187572601487733}
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
