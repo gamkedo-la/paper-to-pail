@@ -34,9 +34,9 @@ public class PlaneCollider : MonoBehaviour {
 	}
 
 	private void Win() {
-		SceneManager.LoadScene("Win");
+		LevelManager.Instance.Win();
 	}
 	private void Lose() {
-		SceneManager.LoadScene("Loose");
+		LevelManager.Instance.Lose();
 	}
 }

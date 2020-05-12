@@ -7,7 +7,7 @@ public class MouseToDemoScene : MonoBehaviour {
 
 	void Update() {
 		if (Input.GetMouseButton(0)) {
-			SceneManager.LoadScene("DemoLevel");
+			LevelManager.Instance.LoadLevel();
 		}
 	}
 }
