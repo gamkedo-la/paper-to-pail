@@ -8,6 +8,7 @@ public class PlaneCollider : MonoBehaviour {
 
 	public UnityEvent OnWin = null;
 	public UnityEvent OnLose = null;
+
 	public float holdOnWin = 3.0f;
 	public float holdOnLose = 1.5f;
 
