@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,15 +11,6 @@ public class LevelManager : MonoBehaviour {
 	public string currentScene;
 	public int currentLevel = 0;
 	public GameType currentGameType = GameType.FindThePail;
-
-	public enum GameType {
-		FindThePail,
-		DogFight,
-		Loops,
-		BombingRun,
-		PickUps,
-		TimeTrial
-	}
 
 	public string[] findThePailLevels = new string[] { "DemoLevel" };
 
@@ -37,18 +29,44 @@ public class LevelManager : MonoBehaviour {
 	public void LoadLevel() {
 
 		switch (currentGameType) {
-			case GameType.FindThePail:
+		case GameType.FindThePail:
+			if (currentLevel >= findThePailLevels.Length) {
+				currentLevel = 0;
+				SceneManager.LoadScene("Title");
+			} else {
 				SceneManager.LoadScene(findThePailLevels[currentLevel]);
-				break;
+			}
+			break;
 		}
 	}
 
 	public void Win() {
-		SceneManager.LoadScene("Win");
+		LevelComplete();
 	}
 
 	public void Lose() {
-		SceneManager.LoadScene("Loose");
+		SceneManager.LoadScene("Lose");
 	}
 
+	public void LevelComplete() {
+		SceneManager.LoadScene("Win");
+	}
+
+	public void NextLevel() {
+		currentLevel++;
+		LoadLevel();
+	}
+
+	public void RestartLevel() {
+		LoadLevel();
+	}
+}
+
+public enum GameType {
+	FindThePail,
+	DogFight,
+	Loops,
+	BombingRun,
+	PickUps,
+	TimeTrial
 }
