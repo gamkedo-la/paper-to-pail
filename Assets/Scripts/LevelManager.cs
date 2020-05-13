@@ -12,7 +12,8 @@ public class LevelManager : MonoBehaviour {
 	public int currentLevel = 0;
 	public GameType currentGameType = GameType.FindThePail;
 
-	public string[] findThePailLevels = new string[] { "DemoLevel" };
+	[SerializeField]
+	private string[] findThePailLevels = new string[] { "ftpTest1", "ftpTest2", "ftpTest3", "DemoLevel" };
 
 	void Awake() {
 		if (Instance == null) {

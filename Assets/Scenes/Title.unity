@@ -187,7 +187,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &468762030
+--- !u!1001 &656436696
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -620,3 +620,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6344aaa3dd312844d91cd43e4f78f9aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneType: 0

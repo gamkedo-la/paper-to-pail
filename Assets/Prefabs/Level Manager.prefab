@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7911480300240501415}
-  - component: {fileID: 7911480300240501414}
+  - component: {fileID: 8226546701886509481}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7911480300240501414
+--- !u!114 &8226546701886509481
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,5 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScene: 
   currentLevel: 0
+  currentGameType: 0
   findThePailLevels:
-  - DemoLevel
+  - ftpTest1
+  - ftpTest2
+  - ftpTest3
