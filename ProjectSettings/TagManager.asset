@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Trashcan
   - Boost
   - Pickup
+  - WinZone
+  - Trashcan
   layers:
   - Default
   - TransparentFX

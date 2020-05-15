@@ -9739,6 +9739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad2f00662db6264ebc4e3c4a2c15884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  locked: 0
 --- !u!114 &7133506929640095055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9799,7 +9800,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 5271187572601487733}
-        m_MethodName: set_enabled
+        m_MethodName: SetCameraLock
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9807,7 +9808,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   OnLose:
     m_PersistentCalls:
@@ -9857,7 +9858,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 5271187572601487733}
-        m_MethodName: set_enabled
+        m_MethodName: SetCameraLock
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9865,7 +9866,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   holdOnWin: 3
   holdOnLose: 1.5
