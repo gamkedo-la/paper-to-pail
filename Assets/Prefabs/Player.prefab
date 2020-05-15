@@ -9739,7 +9739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad2f00662db6264ebc4e3c4a2c15884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockoffCamera: 0
 --- !u!114 &7133506929640095055
 MonoBehaviour:
   m_ObjectHideFlags: 0

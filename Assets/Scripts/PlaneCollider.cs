@@ -19,12 +19,12 @@ public class PlaneCollider : MonoBehaviour {
 			return;
 		}
 
-		if (other.gameObject.tag == "Trashcan") {
+		if (other.gameObject.tag == "WinZone") {
 			OnWin?.Invoke();
 			Invoke(nameof(Win), holdOnWin);
 			fall = true;
 		} else if (other.gameObject.tag == "Boost") {
-			gameObject.GetComponent<FlightController>().speed *= 2f;
+			gameObject.GetComponent<FlightController>().speed *= 1.5f;
 			other.gameObject.SetActive(false);
 		} else if (other.gameObject.tag != "Player") {
 			OnLose?.Invoke();

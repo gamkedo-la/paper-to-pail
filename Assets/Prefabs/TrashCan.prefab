@@ -106,8 +106,8 @@ GameObject:
   - component: {fileID: 4594433494182323665}
   - component: {fileID: 7027580654096872205}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Trashcan
+  m_Name: Win Zone
+  m_TagString: WinZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
