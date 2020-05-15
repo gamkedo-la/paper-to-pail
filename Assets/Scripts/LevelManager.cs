@@ -12,7 +12,12 @@ public class LevelManager : MonoBehaviour {
 	public int currentLevel = 0;
 	public GameType currentGameType = GameType.FindThePail;
 	
-	private string[][] levels = { new[] { "ftpTest1", "ftpTest2", "ftpTest3" } };
+	private string[][] levels = { new[] { "ftpTest1", "ftpTest2", "ftpTest3" }, //Find the Pail
+								  new[] { "DemoLevel" }, //Dog Fight
+								  new[] { "DemoLevel" }, //Loops
+								  new[] { "DemoLevel" }, //Bombing Run
+								  new[] { "DemoLevel" }, //Pickups
+								  new[] { "DemoLevel" } };//Time Trials
 
 	void Awake() {
 		if (Instance == null) {
@@ -31,8 +36,10 @@ public class LevelManager : MonoBehaviour {
 		
 		if (currentLevel >= levels[(int)currentGameType].Length) {
 			currentLevel = 0;
+			currentScene = "Title";
 			SceneManager.LoadScene("Title");
 		} else {
+			currentScene = levels[(int)currentGameType][currentLevel];
 			SceneManager.LoadScene(levels[(int)currentGameType][currentLevel]);
 		}
 	}
@@ -42,10 +49,12 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void Lose() {
+		currentScene = "Lose";
 		SceneManager.LoadScene("Lose");
 	}
 
 	public void LevelComplete() {
+		currentScene = "Win";
 		SceneManager.LoadScene("Win");
 	}
 
