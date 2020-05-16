@@ -9687,6 +9687,7 @@ GameObject:
   - component: {fileID: 5271187572601487733}
   - component: {fileID: 7133506929640095055}
   - component: {fileID: 7133506929640095054}
+  - component: {fileID: 7386115893578175084}
   - component: {fileID: 7133506929640095048}
   m_Layer: 0
   m_Name: Player
@@ -9857,6 +9858,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7133506929640095054}
+        m_MethodName: set_isTrigger
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7386115893578175084}
+        m_MethodName: set_isTrigger
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 5271187572601487733}
         m_MethodName: SetCameraLock
         m_Mode: 6
@@ -9881,8 +9904,22 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.09510802, y: 0.24779809, z: 1.6114998}
-  m_Center: {x: 0.007048689, y: 0.1275456, z: -0.055419207}
+  m_Size: {x: 0.072715744, y: 0.20578277, z: 1.6114998}
+  m_Center: {x: 0.018244825, y: 0.10653794, z: -0.055419207}
+--- !u!136 &7386115893578175084
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7133506929640095059}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.09
+  m_Height: 1.71
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.37, z: -0.61}
 --- !u!54 &7133506929640095048
 Rigidbody:
   m_ObjectHideFlags: 0
