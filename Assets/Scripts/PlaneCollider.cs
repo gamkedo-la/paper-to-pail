@@ -14,7 +14,21 @@ public class PlaneCollider : MonoBehaviour {
 
 	private bool fall = false;
 
-	private void OnTriggerEnter(Collider other) {
+	private Vector3 pushPlane = new Vector3();
+	private float pushMultiplier = 20;
+
+	private Vector3 directPlane = new Vector3();
+	private float directMultiplier = 0.2f;
+
+	
+
+	void Update() {
+		transform.position += pushPlane * pushMultiplier * Time.deltaTime;
+		transform.Rotate(directPlane * directMultiplier * Time.deltaTime);
+		
+	}
+
+	void OnTriggerEnter(Collider other) {
 		if (fall) {
 			return;
 		}
@@ -23,6 +37,12 @@ public class PlaneCollider : MonoBehaviour {
 			OnWin?.Invoke();
 			Invoke(nameof(Win), holdOnWin);
 			fall = true;
+		} else if (other.gameObject.tag == "PushZone") {
+			Debug.Log("Enter Push");
+			pushPlane += other.gameObject.transform.forward;
+		} else if (other.gameObject.tag == "DirectZone") {
+			Debug.Log("Enter Direct");
+			directPlane += other.gameObject.transform.rotation.eulerAngles;
 		} else if (other.gameObject.tag == "Boost") {
 			gameObject.GetComponent<FlightController>().speed *= 1.5f;
 			other.gameObject.SetActive(false);
@@ -30,6 +50,16 @@ public class PlaneCollider : MonoBehaviour {
 			OnLose?.Invoke();
 			Invoke(nameof(Lose), holdOnLose);
 			fall = true;
+		}
+	}
+
+	void OnTriggerExit(Collider other) {
+		if (other.gameObject.tag == "PushZone") {
+			Debug.Log("Exit Push");
+			pushPlane -= other.gameObject.transform.forward;
+		} else if (other.gameObject.tag == "DirectZone") {
+			Debug.Log("Exit Direct");
+			directPlane -= other.gameObject.transform.rotation.eulerAngles;
 		}
 	}
 
