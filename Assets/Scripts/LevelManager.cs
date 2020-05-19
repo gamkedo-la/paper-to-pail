@@ -36,8 +36,8 @@ public class LevelManager : MonoBehaviour {
 		
 		if (currentLevel >= levels[(int)currentGameType].Length) {
 			currentLevel = 0;
-			currentScene = "Title";
 			SceneManager.LoadScene("Title");
+			currentScene = "Title";
 		} else {
 			currentScene = levels[(int)currentGameType][currentLevel];
 			SceneManager.LoadScene(levels[(int)currentGameType][currentLevel]);
@@ -49,13 +49,27 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void Lose() {
-		currentScene = "Lose";
 		SceneManager.LoadScene("Lose");
+		currentScene = "Lose";
 	}
 
 	public void Title() {
-		currentScene = "Title";
 		SceneManager.LoadScene("Title");
+		currentScene = "Title";
+	}
+
+	public void LoadTitle() {
+		SceneManager.LoadScene("Title", LoadSceneMode.Additive);
+	}
+
+	public void SetTitle() {
+		if (!SceneManager.GetSceneByName("Title").isLoaded) {
+			Title();
+			return; 
+		}
+		SceneManager.SetActiveScene(SceneManager.GetSceneByName("Title"));
+		SceneManager.UnloadSceneAsync(currentScene);
+		currentScene = "Title";
 	}
 
 	public void LevelComplete() {
