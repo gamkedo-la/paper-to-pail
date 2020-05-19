@@ -25,12 +25,11 @@ public class IntroVideoHandler : MonoBehaviour {
 		if (videoPlayer.isPlaying && !started) {
 			MusicManager.Instance.PlayTrack(introMusic, introEndTime);
 			MusicManager.Instance.ScheduleTrack(menuMusic);
-			//LevelManager.Instance.LoadTitle();
+			LevelManager.Instance.LoadTitle();
 			started = true;
 		}
 		if (videoPlayer.isPaused && started) {
-			//LevelManager.Instance.SetTitle();
-			LevelManager.Instance.Title();
+			LevelManager.Instance.SetTitle();
 		}
 	}
 }
