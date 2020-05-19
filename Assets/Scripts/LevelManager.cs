@@ -53,6 +53,11 @@ public class LevelManager : MonoBehaviour {
 		SceneManager.LoadScene("Lose");
 	}
 
+	public void Title() {
+		currentScene = "Title";
+		SceneManager.LoadScene("Title");
+	}
+
 	public void LevelComplete() {
 		currentScene = "Win";
 		SceneManager.LoadScene("Win");
