@@ -18,13 +18,14 @@ public class PlaneCollider : MonoBehaviour {
 	private float pushMultiplier = 10;
 
 	private Vector3 directPlane = new Vector3();
-	private float directMultiplier = 0.2f;
+	private Vector3 planeRotation = new Vector3();
+	private float directMultiplier = 0.5f;
 
 	
 
 	void Update() {
-		transform.position += pushPlane * pushMultiplier * Time.deltaTime;
-		//transform.Rotate(directPlane * directMultiplier * Time.deltaTime);
+		//transform.position += pushPlane * pushMultiplier * Time.deltaTime; ;
+		transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + directPlane * directMultiplier * Time.deltaTime);
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -41,7 +42,10 @@ public class PlaneCollider : MonoBehaviour {
 			pushPlane += other.gameObject.transform.forward;
 		} else if (other.gameObject.CompareTag("DirectZone")) {
 			Debug.Log("Enter Direct");
-			directPlane += other.gameObject.transform.rotation.eulerAngles;
+			planeRotation = transform.rotation.eulerAngles;
+			directPlane.x += directPlane.x - planeRotation.x;
+			directPlane.y += directPlane.y - planeRotation.y;
+			directPlane.z += directPlane.z - planeRotation.z;
 			Debug.Log(directPlane);
 		} else if (other.gameObject.CompareTag("Boost")) {
 			gameObject.GetComponent<FlightController>().speed *= 1.5f;
@@ -59,7 +63,10 @@ public class PlaneCollider : MonoBehaviour {
 			pushPlane -= other.gameObject.transform.forward;
 		} else if (other.gameObject.CompareTag("DirectZone")) {
 			Debug.Log("Exit Direct");
-			directPlane -= other.gameObject.transform.localRotation.eulerAngles;
+			planeRotation = transform.rotation.eulerAngles;
+			directPlane.x -= directPlane.x - planeRotation.x;
+			directPlane.y -= directPlane.y - planeRotation.y;
+			directPlane.z -= directPlane.z - planeRotation.z;
 			Debug.Log(directPlane);
 		}
 	}
