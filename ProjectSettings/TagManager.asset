@@ -9,6 +9,8 @@ TagManager:
   - WinZone
   - PushZone
   - DirectZone
+  - BostZone
+  - BoostZone
   layers:
   - Default
   - TransparentFX

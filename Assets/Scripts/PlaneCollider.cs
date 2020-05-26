@@ -17,15 +17,14 @@ public class PlaneCollider : MonoBehaviour {
 	private Vector3 pushPlane = new Vector3();
 	private float pushMultiplier = 10;
 
-	private Vector3 directPlane = new Vector3();
-	private Vector3 planeRotation = new Vector3();
-	private float directMultiplier = 0.5f;
+	private Quaternion directPlane = new Quaternion();
+	private int currentDirectZones = 0;
 
 	
 
 	void Update() {
-		//transform.position += pushPlane * pushMultiplier * Time.deltaTime; ;
-		transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + directPlane * directMultiplier * Time.deltaTime);
+		transform.position += pushPlane * pushMultiplier * Time.deltaTime; ;
+		transform.rotation = Quaternion.RotateTowards(transform.rotation, directPlane, 270f * Time.deltaTime);
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -38,15 +37,12 @@ public class PlaneCollider : MonoBehaviour {
 			Invoke(nameof(Win), holdOnWin);
 			fall = true;
 		} else if (other.gameObject.CompareTag("PushZone")) {
-			Debug.Log("Enter Push");
 			pushPlane += other.gameObject.transform.forward;
 		} else if (other.gameObject.CompareTag("DirectZone")) {
-			Debug.Log("Enter Direct");
-			planeRotation = transform.rotation.eulerAngles;
-			directPlane.x += directPlane.x - planeRotation.x;
-			directPlane.y += directPlane.y - planeRotation.y;
-			directPlane.z += directPlane.z - planeRotation.z;
-			Debug.Log(directPlane);
+			directPlane = other.transform.rotation;
+			currentDirectZones++;
+		} else if (other.gameObject.CompareTag("BoostZone")) {
+			gameObject.GetComponent<FlightController>().speed *= 1.1f;
 		} else if (other.gameObject.CompareTag("Boost")) {
 			gameObject.GetComponent<FlightController>().speed *= 1.5f;
 			other.gameObject.SetActive(false);
@@ -59,15 +55,12 @@ public class PlaneCollider : MonoBehaviour {
 
 	void OnTriggerExit(Collider other) {
 		if (other.gameObject.CompareTag("PushZone")) {
-			Debug.Log("Exit Push");
 			pushPlane -= other.gameObject.transform.forward;
 		} else if (other.gameObject.CompareTag("DirectZone")) {
-			Debug.Log("Exit Direct");
-			planeRotation = transform.rotation.eulerAngles;
-			directPlane.x -= directPlane.x - planeRotation.x;
-			directPlane.y -= directPlane.y - planeRotation.y;
-			directPlane.z -= directPlane.z - planeRotation.z;
-			Debug.Log(directPlane);
+			currentDirectZones--;
+			if (currentDirectZones <= 0) {
+				directPlane = new Quaternion();
+			}
 		}
 	}
 
