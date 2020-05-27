@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour {
 	public GameType currentGameType = GameType.FindThePail;
 	
 	private string[][] levels = { new[] { "ftpTest1", "ftpTest2", "ftpTest3" }, //Find the Pail
-								  new[] { "DemoLevel" }, //Dog Fight
+								  new[] { "dogfightTest" }, //Dog Fight
 								  new[] { "DemoLevel" }, //Loops
 								  new[] { "DemoLevel" }, //Bombing Run
 								  new[] { "DemoLevel" }, //Pickups
