@@ -9925,6 +9925,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491197319}
+  - component: {fileID: 7710147320467168222}
   m_Layer: 0
   m_Name: Win Effect
   m_TagString: Untagged
@@ -9948,6 +9949,18 @@ Transform:
   m_Father: {fileID: 7133506929640095053}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7710147320467168222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491197318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 189f39f720d1e264a8c231c558e65144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1733385794
 GameObject:
   m_ObjectHideFlags: 0
@@ -10142,6 +10155,7 @@ MonoBehaviour:
   bank: 60
   pull: 40
   pickup: 5
+  controllerDeadzone: 0.3
 --- !u!114 &5271187572601487733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10224,6 +10238,28 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7133506929640095054}
+        m_MethodName: set_isTrigger
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7386115893578175084}
+        m_MethodName: set_isTrigger
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
   OnLose:
     m_PersistentCalls:
