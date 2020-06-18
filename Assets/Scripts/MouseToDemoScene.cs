@@ -7,16 +7,15 @@ public class MouseToDemoScene : MonoBehaviour {
 	public SceneType sceneType;
 
 	void Update() {
-		if (Input.GetMouseButton(0))
+		if (Input.GetMouseButton(0) )
         {
             ProgressToNextScene();
         }
 
-        if (Input.GetButtonDown("SubmitPS4orOther"))
+        if ( Input.GetButtonDown( "Submit" ) )
         {
-            ProgressToNextScene();
+            ProgressToNextScene( );
         }
-
     }
 
     private void ProgressToNextScene()
