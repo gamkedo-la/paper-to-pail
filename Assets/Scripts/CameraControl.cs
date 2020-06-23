@@ -6,6 +6,8 @@ public class CameraControl : MonoBehaviour {
 
 	public bool locked = false;
 
+	[SerializeField] float joystickDeadZone = 0.1f;
+
 	float cameraOffsetX = 0f;
 	float cameraOffsetY = 0f;
 	Vector3 oldView = new Vector3();
@@ -25,10 +27,22 @@ public class CameraControl : MonoBehaviour {
 	private void FollowCamera() {
 
 		cameraOffsetX += Input.GetAxis("MouseX") / 5;
+		float joystickHorizontal = Input.GetAxis("CameraHorizontal");
+		if ( Mathf.Abs( joystickHorizontal ) >= joystickDeadZone )
+		{
+			cameraOffsetX += joystickHorizontal / 5;
+		}
+
 		if (cameraOffsetX > 30) { cameraOffsetX = 30; }
 		if (cameraOffsetX < -30) { cameraOffsetX = -30; }
 
 		cameraOffsetY += Input.GetAxis("MouseY") / 5;
+		float joystickVertical = Input.GetAxis("CameraVertical");
+		if ( Mathf.Abs( joystickVertical ) >= joystickDeadZone )
+		{
+			cameraOffsetY += joystickVertical / 5;
+		}
+
 		if (cameraOffsetY > 30) { cameraOffsetY = 30; }
 		if (cameraOffsetY < -30) { cameraOffsetY = -30; }
 
