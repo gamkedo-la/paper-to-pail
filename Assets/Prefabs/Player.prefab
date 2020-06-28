@@ -10169,6 +10169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   locked: 0
+  joystickDeadZone: 0.1
 --- !u!114 &7133506929640095055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10453,6 +10454,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dbad102263b6fb646830ada6188ce4cf, type: 2}
+    - target: {fileID: 5057025881834810475, guid: 14cec5728fcd8c64a9e2e63dcd1d533a,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8477882991341054181, guid: 14cec5728fcd8c64a9e2e63dcd1d533a,
         type: 3}
       propertyPath: m_Name
