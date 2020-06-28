@@ -27,7 +27,7 @@ public class CameraControl : MonoBehaviour {
 	private void FollowCamera() {
 
 		cameraOffsetX += Input.GetAxis("MouseX") / 5;
-		float joystickHorizontal = Input.GetAxis("CameraHorizontal");
+		float joystickHorizontal = Input.GetAxis("Horizontal");
 		if ( Mathf.Abs( joystickHorizontal ) >= joystickDeadZone )
 		{
 			cameraOffsetX += joystickHorizontal / 5;
@@ -37,7 +37,7 @@ public class CameraControl : MonoBehaviour {
 		if (cameraOffsetX < -30) { cameraOffsetX = -30; }
 
 		cameraOffsetY += Input.GetAxis("MouseY") / 5;
-		float joystickVertical = Input.GetAxis("CameraVertical");
+		float joystickVertical = Input.GetAxis("Vertical");
 		if ( Mathf.Abs( joystickVertical ) >= joystickDeadZone )
 		{
 			cameraOffsetY += joystickVertical / 5;
