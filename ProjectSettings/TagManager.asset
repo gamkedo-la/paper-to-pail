@@ -11,6 +11,8 @@ TagManager:
   - DirectZone
   - BoostZone
   - Loop
+  - Shot
+  - Enemy
   layers:
   - Default
   - TransparentFX

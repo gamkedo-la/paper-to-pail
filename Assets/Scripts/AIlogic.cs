@@ -30,6 +30,7 @@ public class AIlogic : MonoBehaviour {
 
 	void Start() {
 		initialModelRotation = myPlaneModel.rotation;
+		LevelManager.Instance.AddGoal();
 	}
 	
 	void FixedUpdate() {
@@ -72,5 +73,12 @@ public class AIlogic : MonoBehaviour {
 		modelRot *= Quaternion.AngleAxis(planeRoll, Vector3.up);
 		modelRot *= Quaternion.AngleAxis(planePitch, Vector3.right);
 		myPlaneModel.rotation = Quaternion.Slerp(myPlaneModel.rotation, modelRot, 0.05f);
+	}
+
+	private void OnTriggerEnter(Collider other) {
+		if (other.gameObject.CompareTag("Shot")) {
+			LevelManager.Instance.RemoveGoal();
+			Destroy(gameObject);
+		}
 	}
 }

@@ -4,39 +4,32 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MouseToDemoScene : MonoBehaviour {
-	public SceneType sceneType;
+    public SceneType sceneType;
 
-	void Update() {
-		if (Input.GetMouseButton(0) )
-        {
+    void Update() {
+
+        if (Input.GetButtonDown("Submit") || Input.GetMouseButtonDown(0)) {
             ProgressToNextScene();
-        }
-
-        if ( Input.GetButtonDown( "Submit" ) )
-        {
-            ProgressToNextScene( );
         }
     }
 
-    private void ProgressToNextScene()
-    {
-        switch (sceneType)
-        {
+    private void ProgressToNextScene() {
+        switch (sceneType) {
             case SceneType.Title:
-                LevelManager.Instance.LoadLevel();
-                break;
+            LevelManager.Instance.LoadLevel();
+            break;
             case SceneType.Win:
-                LevelManager.Instance.NextLevel();
-                break;
+            LevelManager.Instance.NextLevel();
+            break;
             case SceneType.Lose:
-                LevelManager.Instance.RestartLevel();
-                break;
+            LevelManager.Instance.RestartLevel();
+            break;
         }
     }
 }
 
 public enum SceneType {
-	Title,
-	Win,
-	Lose
+    Title,
+    Win,
+    Lose
 }

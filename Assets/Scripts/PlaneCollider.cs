@@ -36,20 +36,33 @@ public class PlaneCollider : MonoBehaviour {
 			OnWin?.Invoke();
 			Invoke(nameof(Win), holdOnWin);
 			fall = true;
+
 		} else if (other.gameObject.CompareTag("PushZone")) {
 			pushPlane += other.gameObject.transform.forward;
+
 		} else if (other.gameObject.CompareTag("DirectZone")) {
 			directPlane = other.transform.rotation;
 			currentDirectZones++;
+
 		} else if (other.gameObject.CompareTag("BoostZone")) {
 			gameObject.GetComponent<FlightController>().speed *= 1.1f;
+
 		} else if (other.gameObject.CompareTag("Boost")) {
 			gameObject.GetComponent<FlightController>().speed *= 1.5f;
 			other.gameObject.SetActive(false);
+
 		} else if (other.gameObject.CompareTag("Loop")) {
 			other.gameObject.GetComponent<Loop>().Complete();
+
 		} else if (other.gameObject.CompareTag("Pickup")) {
 			other.gameObject.GetComponent<Pickup>().Complete();
+
+		} else if (other.gameObject.CompareTag("Enemy")) {
+
+
+		} else if (other.gameObject.CompareTag("Shot")) {
+
+
 		} else if (!other.gameObject.CompareTag("Player")) {
 			OnLose?.Invoke();
 			Invoke(nameof(Lose), holdOnLose);
