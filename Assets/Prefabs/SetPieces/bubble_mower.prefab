@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3333430247392362459}
   - component: {fileID: 6215276037832560547}
   - component: {fileID: 2671759593405129344}
+  - component: {fileID: 450347992353171340}
   m_Layer: 0
   m_Name: wheels_rear
   m_TagString: Untagged
@@ -79,6 +80,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &450347992353171340
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729441690304360845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -430892684769619694, guid: 07aabb99dedddb34996f9969d22de25f, type: 3}
 --- !u!1 &1898517906868678166
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,6 +140,7 @@ GameObject:
   - component: {fileID: 3224202856045772277}
   - component: {fileID: 4711442056518891294}
   - component: {fileID: 2125119989908882970}
+  - component: {fileID: 8385847481227076582}
   m_Layer: 0
   m_Name: bubble_spinner
   m_TagString: Untagged
@@ -193,6 +209,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8385847481227076582
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2636092221059395045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6338527154997820644, guid: 07aabb99dedddb34996f9969d22de25f, type: 3}
 --- !u!1 &3038031723270821086
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,6 +234,7 @@ GameObject:
   - component: {fileID: 3480272333040321814}
   - component: {fileID: 5924980192962353225}
   - component: {fileID: 4951445226958063975}
+  - component: {fileID: 6366533990163847818}
   m_Layer: 0
   m_Name: wheels_front
   m_TagString: Untagged
@@ -272,6 +303,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6366533990163847818
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3038031723270821086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3673330626095581212, guid: 07aabb99dedddb34996f9969d22de25f, type: 3}
 --- !u!1 &5128567863671743135
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +328,7 @@ GameObject:
   - component: {fileID: 2851638782848595724}
   - component: {fileID: 8977621202463618699}
   - component: {fileID: 5886944905201445672}
+  - component: {fileID: 3106423076401356560}
   m_Layer: 0
   m_Name: mower_body
   m_TagString: Untagged
@@ -351,6 +397,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3106423076401356560
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5128567863671743135}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4485729310029716522, guid: 07aabb99dedddb34996f9969d22de25f, type: 3}
 --- !u!1 &5211382358014008819
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +422,7 @@ GameObject:
   - component: {fileID: 4150058025229765590}
   - component: {fileID: 4653765773395619769}
   - component: {fileID: 1877730108898995993}
+  - component: {fileID: 5392373555410357626}
   m_Layer: 0
   m_Name: handle
   m_TagString: Untagged
@@ -430,3 +491,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &5392373555410357626
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5211382358014008819}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8393969432434051992, guid: 07aabb99dedddb34996f9969d22de25f, type: 3}
