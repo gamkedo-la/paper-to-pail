@@ -46,6 +46,8 @@ public class PlaneCollider : MonoBehaviour {
 		} else if (other.gameObject.CompareTag("Boost")) {
 			gameObject.GetComponent<FlightController>().speed *= 1.5f;
 			other.gameObject.SetActive(false);
+		} else if (other.gameObject.CompareTag("Loop")) {
+			other.gameObject.GetComponent<Loop>().Complete();
 		} else if (!other.gameObject.CompareTag("Player")) {
 			OnLose?.Invoke();
 			Invoke(nameof(Lose), holdOnLose);

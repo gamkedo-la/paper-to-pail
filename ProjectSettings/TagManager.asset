@@ -9,8 +9,8 @@ TagManager:
   - WinZone
   - PushZone
   - DirectZone
-  - BostZone
   - BoostZone
+  - Loop
   layers:
   - Default
   - TransparentFX

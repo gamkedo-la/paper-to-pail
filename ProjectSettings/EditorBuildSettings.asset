@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FindThePail/ftpTest3.unity
     guid: a11224714033d66428e683d0c7dcce0e
+  - enabled: 1
+    path: Assets/Scenes/DogFight/dogfightTest.unity
+    guid: 190326e18477f464582e9d052528b89e
+  - enabled: 1
+    path: Assets/Scenes/Loops/loopTest1.unity
+    guid: 162292ba999d7504098e3b29fff77f7d
+  - enabled: 1
+    path: Assets/Scenes/Loops/loopTest2.unity
+    guid: cf7c2868fac0a5b40869ca3462e539d7
   m_configObjects: {}

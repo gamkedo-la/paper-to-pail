@@ -11,10 +11,12 @@ public class LevelManager : MonoBehaviour {
 	public string currentScene;
 	public int currentLevel = 0;
 	public GameType currentGameType = GameType.FindThePail;
+
+	private int goals = 0;
 	
 	private string[][] levels = { new[] { "ftpTest1", "ftpTest2", "ftpTest3" }, //Find the Pail
 								  new[] { "dogfightTest" }, //Dog Fight
-								  new[] { "DemoLevel" }, //Loops
+								  new[] { "loopTest1", "loopTest2" }, //Loops
 								  new[] { "DemoLevel" }, //Bombing Run
 								  new[] { "DemoLevel" }, //Pickups
 								  new[] { "DemoLevel" } };//Time Trials
@@ -42,6 +44,8 @@ public class LevelManager : MonoBehaviour {
 			currentScene = levels[(int)currentGameType][currentLevel];
 			SceneManager.LoadScene(levels[(int)currentGameType][currentLevel]);
 		}
+
+		goals = 0;
 	}
 
 	public void Win() {
@@ -84,6 +88,19 @@ public class LevelManager : MonoBehaviour {
 
 	public void RestartLevel() {
 		LoadLevel();
+	}
+
+	public void AddGoal() {
+		goals++;
+		Debug.Log(goals);
+	}
+
+	public void RemoveGoal() {
+		goals--;
+		Debug.Log(goals);
+		if (goals <= 0) {
+			Win();
+		}
 	}
 }
 
