@@ -48,6 +48,8 @@ public class PlaneCollider : MonoBehaviour {
 			other.gameObject.SetActive(false);
 		} else if (other.gameObject.CompareTag("Loop")) {
 			other.gameObject.GetComponent<Loop>().Complete();
+		} else if (other.gameObject.CompareTag("Pickup")) {
+			other.gameObject.GetComponent<Pickup>().Complete();
 		} else if (!other.gameObject.CompareTag("Player")) {
 			OnLose?.Invoke();
 			Invoke(nameof(Lose), holdOnLose);

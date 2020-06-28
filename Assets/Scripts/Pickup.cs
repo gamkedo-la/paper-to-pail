@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Loop : MonoBehaviour {
+public class Pickup : MonoBehaviour {
 
-    void Start() {
+	void Start() {
 		LevelManager.Instance.AddGoal();
-    }
+	}
 
 	public void Complete() {
 		LevelManager.Instance.RemoveGoal();
