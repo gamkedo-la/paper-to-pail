@@ -14,11 +14,12 @@ public class IntroVideoHandler : MonoBehaviour {
 
 	void Start() {
 		videoPlayer = gameObject.GetComponentInChildren<UnityEngine.Video.VideoPlayer>();
-		videoPlayer.clip = videoClip;
+		//videoPlayer.clip = videoClip;
+		videoPlayer.url = videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "intro-video.mp4");
 	}
 
 	void Update() {
-		if (!videoPlayer.isPlaying && !triggeredPlay) {
+		if (videoPlayer.isPrepared && !videoPlayer.isPlaying && !triggeredPlay) {
 			videoPlayer.Play();
 			triggeredPlay = true;
 		}
