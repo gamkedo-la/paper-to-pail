@@ -19,7 +19,7 @@ public class IntroVideoHandler : MonoBehaviour {
 	}
 
 	void Update() {
-		if (videoPlayer.isPrepared && !videoPlayer.isPlaying && !triggeredPlay) {
+		if (!videoPlayer.isPlaying && !triggeredPlay) {
 			videoPlayer.Play();
 			triggeredPlay = true;
 		}
