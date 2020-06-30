@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour {
 								  new[] { "dogfightTest" }, //Dog Fight
 								  new[] { "loopTest1", "loopTest2" }, //Loops
 								  new[] { "DemoLevel" }, //Bombing Run
-								  new[] { "pickupTest1",  "pickupTest2"}, //Pickups
+								  new[] { "pickupsTest1",  "pickupsTest2"}, //Pickups
 								  new[] { "DemoLevel" } };//Time Trials
 
 	void Awake() {
