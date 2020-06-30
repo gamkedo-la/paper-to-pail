@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -9,7 +6,7 @@ public class PauseMenu : MonoBehaviour
     private bool gamePaused = false;
 
     [SerializeField]
-    private GameObject pauseMenuCanvas;
+    private GameObject pauseMenuCanvas = null;
 
     private void Start()
     {
@@ -41,6 +38,7 @@ public class PauseMenu : MonoBehaviour
         gamePaused = true;
         pauseMenuCanvas.SetActive(true);
         Time.timeScale = 0f;
+        Time.fixedDeltaTime = Time.timeScale * 0.02f;
     }
 
     private void Resume()
@@ -48,5 +46,6 @@ public class PauseMenu : MonoBehaviour
         gamePaused = false;
         pauseMenuCanvas.SetActive(false);
         Time.timeScale = 1f;
+        Time.fixedDeltaTime = Time.timeScale * 0.02f;
     }
 }
