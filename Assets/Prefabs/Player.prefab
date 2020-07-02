@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 720157751}
   - component: {fileID: 720157752}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wind (left)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 929620414}
   - component: {fileID: 929620415}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wind (middle)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 980335543}
   - component: {fileID: 980335545}
   - component: {fileID: 980335544}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5106,7 +5106,7 @@ GameObject:
   - component: {fileID: 1485440674}
   - component: {fileID: 1485440676}
   - component: {fileID: 1485440675}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9926,7 +9926,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1491197319}
   - component: {fileID: 7710147320467168222}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Win Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9971,7 +9971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1733385795}
   - component: {fileID: 1733385796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wind (right)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10113,7 +10113,7 @@ GameObject:
   - component: {fileID: 7133506929640095054}
   - component: {fileID: 7386115893578175084}
   - component: {fileID: 7133506929640095048}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -10169,6 +10169,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   locked: 0
+  CamOcclusion:
+    serializedVersion: 2
+    m_Bits: 0
   joystickDeadZone: 0.1
 --- !u!114 &7133506929640095055
 MonoBehaviour:
@@ -10463,6 +10466,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Classic
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477882991341054181, guid: 14cec5728fcd8c64a9e2e63dcd1d533a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14cec5728fcd8c64a9e2e63dcd1d533a, type: 3}

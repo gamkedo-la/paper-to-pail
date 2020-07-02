@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour {
 
 	public bool locked = false;
+	public LayerMask CamOcclusion;
 
 	[SerializeField] float joystickDeadZone = 0.1f;
 
@@ -48,7 +49,16 @@ public class CameraControl : MonoBehaviour {
 
 		Vector3 moveCamTo = transform.position - transform.forward * 10f + Vector3.up * 5 - Vector3.up * cameraOffsetY / 4 - transform.right * cameraOffsetX / 4;
 		float bias = 0.95f;
-		Camera.main.transform.position = Camera.main.transform.position * bias + moveCamTo * (1f - bias);
+		var targetPosition = Camera.main.transform.position * bias + moveCamTo * (1f - bias);
+		
+		// Try not to look through walls.
+		RaycastHit wallHit;
+		if (Physics.Linecast(transform.position, targetPosition, out wallHit, CamOcclusion))
+		{
+			targetPosition = new Vector3(wallHit.point.x + wallHit.normal.x * 0.5f, targetPosition.y, wallHit.point.z + wallHit.normal.z * 0.5f);
+		}
+
+		Camera.main.transform.position = targetPosition;
 		Vector3 moveViewTo = transform.position + transform.forward * 30f + transform.right * cameraOffsetX + Vector3.up * cameraOffsetY / 3;
 		Camera.main.transform.LookAt(moveViewTo);
 		oldView = moveViewTo;
