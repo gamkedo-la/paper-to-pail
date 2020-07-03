@@ -10171,7 +10171,7 @@ MonoBehaviour:
   locked: 0
   CamOcclusion:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   joystickDeadZone: 0.1
 --- !u!114 &7133506929640095055
 MonoBehaviour:
