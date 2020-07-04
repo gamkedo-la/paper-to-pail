@@ -18,7 +18,7 @@ public class FlightController : MonoBehaviour
 
 	[SerializeField] private float controllerDeadzone = 0.3f;
 
-	private float gravity = 0.0001f;
+	private float gravity = 0.001f;
 	private Controller connectedController = Controller.None;
 	private Vector2 input = Vector2.zero;
 
