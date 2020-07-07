@@ -55,6 +55,20 @@ public class LevelManager : MonoBehaviour {
 	public void Lose() {
 		SceneManager.LoadScene("Lose");
 		currentScene = "Lose";
+
+		// Persist the plane through subsequent plays.
+		var planes = GameObject.FindGameObjectsWithTag("Player");
+		if (planes.Length > 0) {
+			foreach (var plane in planes)
+			{
+				var flightController = plane.GetComponent<FlightController>();
+				if (flightController) {
+					Destroy(flightController);
+				}
+				plane.GetComponent<Rigidbody>().isKinematic = true;
+				DontDestroyOnLoad(plane);
+			}
+		}
 	}
 
 	public void Title() {
@@ -77,6 +91,13 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void LevelComplete() {
+		// Remove persisted player objects.
+		var planes = GameObject.FindGameObjectsWithTag("Player");
+		foreach (var plane in planes)
+		{
+			Destroy(plane);
+		}
+		
 		currentScene = "Win";
 		SceneManager.LoadScene("Win");
 	}
