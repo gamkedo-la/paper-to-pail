@@ -85,6 +85,8 @@ public class PlaneCollider : MonoBehaviour {
 		LevelManager.Instance.Win();
 	}
 	private void Lose() {
+		DontDestroyOnLoad(this.gameObject);
+		GetComponent<Rigidbody>().isKinematic = true;
 		LevelManager.Instance.Lose();
 	}
 }
