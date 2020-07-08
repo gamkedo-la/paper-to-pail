@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void Lose() {
-		SceneManager.LoadScene("Lose");
+		SceneManager.LoadScene("Lose", LoadSceneMode.Additive);
 		currentScene = "Lose";
 	}
 
@@ -86,7 +86,7 @@ public class LevelManager : MonoBehaviour {
 		}
 		
 		currentScene = "Win";
-		SceneManager.LoadScene("Win");
+		SceneManager.LoadScene("Win", LoadSceneMode.Additive);
 	}
 
 	public void NextLevel() {
