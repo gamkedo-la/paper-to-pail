@@ -14,11 +14,11 @@ public class LevelManager : MonoBehaviour {
 
 	private int goals = 0;
 	
-	private string[][] levels = { new[] { "ftpTest1", "ftpTest2", "ftpTest3", "ftpTest4", "blackout" }, //Find the Pail
-								  new[] { "dogfightTest" }, //Dog Fight
-								  new[] { "loopTest1", "loopTest2" }, //Loops
+	private string[][] levels = { new[] { "ftpTest1", "ftpTest2", "ftpTest3", "ftpTest4", "blackout", "factory" }, //Find the Pail
+								  new[] { "DemoLevel" }, //Dog Fight
+								  new[] { "DemoLevel"}, //Loops
 								  new[] { "DemoLevel" }, //Bombing Run
-								  new[] { "pickupsTest1",  "pickupsTest2"}, //Pickups
+								  new[] { "DemoLevel"}, //Pickups
 								  new[] { "DemoLevel" } };//Time Trials
 	
 	void Awake() {
