@@ -62,6 +62,10 @@ public class LevelManager : MonoBehaviour {
 		currentScene = "Title";
 	}
 
+	public void Credits() {
+		return;
+	}
+
 	public void LoadTitle() {
 		SceneManager.LoadScene("Title", LoadSceneMode.Additive);
 	}
