@@ -54,7 +54,7 @@ public class MusicManager : MonoBehaviour {
 		currentTrack.gameObject.name = "Music Track";
 
 		startTime = AudioSettings.dspTime;
-		endTime = startTime + currentTrack.clip.length;
+		endTime = startTime + (double)currentTrack.clip.samples/currentTrack.clip.frequency;
 		manualLoop = false;
 		fadeOnEnd = fadeOut;
 
@@ -98,7 +98,7 @@ public class MusicManager : MonoBehaviour {
 		currentTrack.gameObject.name = "Music Track";
 
 		startTime = AudioSettings.dspTime;
-		endTime = startTime + currentTrack.clip.length;
+		endTime = startTime + (double)currentTrack.clip.samples/currentTrack.clip.frequency;
 		manualLoop = true;
 		fadeOnEnd = fadeOut;
 
