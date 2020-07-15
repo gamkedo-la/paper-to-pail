@@ -91,6 +91,7 @@ public class LevelManager : MonoBehaviour {
 
 	public void NextLevel() {
 		currentLevel++;
+		MusicManager.Instance.nextTrack();
 		LoadLevel();
 	}
 

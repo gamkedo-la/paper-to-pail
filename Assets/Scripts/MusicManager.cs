@@ -31,13 +31,11 @@ public class MusicManager : MonoBehaviour {
 	void Update() {
 		timeNow = AudioSettings.dspTime;
 
-		if (currentTrack != null && scheduledTrack != null && manualLoop && nothingSchedualled && endTime <= timeNow-fadeTime) { //Manual loop and schedualled track
+		if (currentTrack != null && scheduledTrack != null && manualLoop && nothingSchedualled && endTime <= timeNow - fadeTime) { //Manual loop and schedualled track
 			PlayTrackSchedualled(scheduledTrack, endTime, false);
-			scheduledTrack = null;
 			nothingSchedualled = false;
 		} else if (currentTrack != null && scheduledTrack != null && endTime <= timeNow) { //Autolooping and schedualled track
 			PlayTrack(scheduledTrack, true);
-			scheduledTrack = null;
 			nothingSchedualled = false;
 		} else if (currentTrack != null && manualLoop && endTime <= timeNow) { //Manual looping, none schedualled
 			PlayTrack(currentTrack.clip, endTime, false);
@@ -61,6 +59,7 @@ public class MusicManager : MonoBehaviour {
 		fadeOnEnd = fadeOut;
 
 		currentTrack.Play();
+		scheduledTrack = null;
 	}
 
 	public void PlayTrack(AudioClip newTrack, double trackEndTime, bool fadeOut = true) {
@@ -80,6 +79,7 @@ public class MusicManager : MonoBehaviour {
 		fadeOnEnd = fadeOut;
 
 		currentTrack.Play();
+		scheduledTrack = null;
 	}
 
 	private void PlayTrackSchedualled(AudioClip newTrack, double schedual, bool fadeOut = false) {
@@ -104,6 +104,7 @@ public class MusicManager : MonoBehaviour {
 
 		currentTrack.PlayScheduled(schedual);
 		nothingSchedualled = true;
+		scheduledTrack = null;
 	}
 
 	public void ScheduleTrack(AudioClip newTrack) {
@@ -162,5 +163,31 @@ public class MusicManager : MonoBehaviour {
 		source.volume = 1f;
 
 	}
+
+	//Hard cody stuff that you shouldn't do this way
+	public AudioClip[] gameplayMusic = new AudioClip[4];
+	public int currentIndex = 1;
+
+	public void nextTrack() {
+		int newIndex = Random.Range(0, 3);
+		while (newIndex == currentIndex) {
+			newIndex = Random.Range(0, 3);
+		}
+		currentIndex = newIndex;
+
+		switch(currentIndex) {
+			case 0:
+				PlayTrack(gameplayMusic[0]);
+				ScheduleTrack(gameplayMusic[1]);
+				break;
+			case 1:
+				PlayTrack(gameplayMusic[2]);
+				break;
+			case 2:
+				PlayTrack(gameplayMusic[3]);
+				break;
+		}
+	}
+
 }
 
