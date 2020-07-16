@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class PlaneCollider : MonoBehaviour {
 
@@ -12,6 +14,9 @@ public class PlaneCollider : MonoBehaviour {
 	public float holdOnWin = 3.0f;
 	public float holdOnLose = 1.5f;
 
+	public AudioClip[] collisionSoundEffects;
+	private AudioSource audioSource;
+
 	private bool fall = false;
 
 	private Vector3 pushPlane = new Vector3();
@@ -20,7 +25,11 @@ public class PlaneCollider : MonoBehaviour {
 	private Quaternion directPlane = new Quaternion();
 	private int currentDirectZones = 0;
 
-	
+
+	private void Start()
+	{
+		audioSource = GetComponent<AudioSource>();
+	}
 
 	void Update() {
 		transform.position += pushPlane * pushMultiplier * Time.deltaTime; ;
@@ -88,5 +97,11 @@ public class PlaneCollider : MonoBehaviour {
 		DontDestroyOnLoad(this.gameObject);
 		GetComponent<Rigidbody>().isKinematic = false;
 		LevelManager.Instance.Lose();
+	}
+
+	public void PlayCollisionSFX()
+	{
+		var sfxClip = collisionSoundEffects[Random.Range(0, collisionSoundEffects.Length)];
+		audioSource.PlayOneShot(sfxClip);
 	}
 }
