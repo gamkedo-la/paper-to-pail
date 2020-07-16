@@ -9,6 +9,11 @@ public class TitleFunctionallity : MonoBehaviour
 		LevelManager.Instance.LoadLevel();
 	}
 
+	public void SetGameType(int gameType)
+	{
+		LevelManager.Instance.currentGameType = (GameType) gameType;
+	}
+
 	public void ToCredits() {
 		LevelManager.Instance.Credits();
 	}

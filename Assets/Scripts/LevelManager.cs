@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +16,7 @@ public class LevelManager : MonoBehaviour {
 	private int goals = 0;
 	
 	private string[][] levels = { new[] { "ftpTest1", "ftpTest2", "ftpTest3", "ftpTest4", "blackout", "Down", "factory" }, //Find the Pail
-								  new[] { "DemoLevel" }, //Dog Fight
+								  new[] { "dogfightTest" }, //Dog Fight
 								  new[] { "DemoLevel"}, //Loops
 								  new[] { "DemoLevel" }, //Bombing Run
 								  new[] { "DemoLevel"}, //Pickups
@@ -105,12 +106,10 @@ public class LevelManager : MonoBehaviour {
 
 	public void AddGoal() {
 		goals++;
-		Debug.Log(goals);
 	}
 
 	public void RemoveGoal() {
 		goals--;
-		Debug.Log(goals);
 		if (goals <= 0) {
 			Win();
 		}
