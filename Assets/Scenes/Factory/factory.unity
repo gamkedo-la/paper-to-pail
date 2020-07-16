@@ -20220,6 +20220,11 @@ PrefabInstance:
       propertyPath: currentScene
       value: factory
       objectReference: {fileID: 0}
+    - target: {fileID: -1252254940938854301, guid: e8b21ca08e55d0f4ea0c4d94a2197677,
+        type: 3}
+      propertyPath: currentLevel
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7911480300240501413, guid: e8b21ca08e55d0f4ea0c4d94a2197677,
         type: 3}
       propertyPath: m_Name
