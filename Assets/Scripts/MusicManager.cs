@@ -165,7 +165,7 @@ public class MusicManager : MonoBehaviour {
 	}
 
 	//Hard cody stuff that you shouldn't do this way
-	public AudioClip[] gameplayMusic = new AudioClip[4];
+	public AudioClip[] gameplayMusic = new AudioClip[5];
 	public int currentIndex = 1;
 
 	public void nextTrack() {
@@ -182,9 +182,10 @@ public class MusicManager : MonoBehaviour {
 				break;
 			case 1:
 				PlayTrack(gameplayMusic[2]);
-				break;
+			ScheduleTrack(gameplayMusic[3]);
+			break;
 			case 2:
-				PlayTrack(gameplayMusic[3]);
+				PlayTrack(gameplayMusic[4]);
 				break;
 		}
 	}
