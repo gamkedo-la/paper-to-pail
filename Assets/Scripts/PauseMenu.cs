@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField]
+    private Animator animator = null;
+    [SerializeField]
+    private Slider volumeSlider = null;
+    [SerializeField]
+    private Text volumeLabel = null;
 
     private bool gamePaused = false;
 
-    [SerializeField]
-    private GameObject pauseMenuCanvas = null;
-
     private void Start()
     {
-        pauseMenuCanvas.SetActive(false);
+        AudioListener.volume = PlayerPrefs.GetFloat( "Volume", 1.0f );
+        volumeSlider.value = AudioListener.volume;
+        volumeLabel.text = $"Volume: {AudioListener.volume * 100:0}%";
     }
 
     private void Update()
@@ -33,10 +39,19 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void SetVolume( float volume )
+    {
+        AudioListener.volume = volume;
+        PlayerPrefs.SetFloat( "Volume", volume );
+
+        volumeSlider.value = AudioListener.volume;
+        volumeLabel.text = $"Volume: {AudioListener.volume * 100:0}%";
+    }
+
     private void Pause()
     {
         gamePaused = true;
-        pauseMenuCanvas.SetActive(true);
+        animator.SetTrigger( "Show" );
         Time.timeScale = 0f;
         Time.fixedDeltaTime = Time.timeScale * 0.02f;
     }
@@ -44,7 +59,7 @@ public class PauseMenu : MonoBehaviour
     private void Resume()
     {
         gamePaused = false;
-        pauseMenuCanvas.SetActive(false);
+        animator.SetTrigger( "Hide" );
         Time.timeScale = 1f;
         Time.fixedDeltaTime = Time.timeScale * 0.02f;
     }

@@ -453,6 +453,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1252254940938854301, guid: e8b21ca08e55d0f4ea0c4d94a2197677,
+        type: 3}
+      propertyPath: currentScene
+      value: Intro
+      objectReference: {fileID: 0}
     - target: {fileID: 7911480300240501413, guid: e8b21ca08e55d0f4ea0c4d94a2197677,
         type: 3}
       propertyPath: m_Name
@@ -526,6 +531,7 @@ GameObject:
   - component: {fileID: 1444935858}
   - component: {fileID: 1444935857}
   - component: {fileID: 1444935856}
+  - component: {fileID: 1444935859}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -598,6 +604,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1444935859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444935855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6344aaa3dd312844d91cd43e4f78f9aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneType: 2
 --- !u!1001 &2033943672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -605,6 +624,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1515416569305511575, guid: 74cda71dfaadb324f9e4fc06b1d6d97f,
+        type: 3}
+      propertyPath: gameplayMusic.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b238fed4f6027a64fbc695cad1ce89a8, type: 3}
+    - target: {fileID: 1515416569305511575, guid: 74cda71dfaadb324f9e4fc06b1d6d97f,
+        type: 3}
+      propertyPath: gameplayMusic.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 693c6e55fa684c9428dd620f22d8ddbc, type: 3}
+    - target: {fileID: 1515416569305511575, guid: 74cda71dfaadb324f9e4fc06b1d6d97f,
+        type: 3}
+      propertyPath: gameplayMusic.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 14e825bdedd230f4abcc9f0c6d7c83ef, type: 3}
+    - target: {fileID: 1515416569305511575, guid: 74cda71dfaadb324f9e4fc06b1d6d97f,
+        type: 3}
+      propertyPath: gameplayMusic.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ef2a9e4d0be47945bd673074eb79b06, type: 3}
     - target: {fileID: 2991525794534643244, guid: 74cda71dfaadb324f9e4fc06b1d6d97f,
         type: 3}
       propertyPath: m_LocalPosition.x

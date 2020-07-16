@@ -14,11 +14,11 @@ public class LevelManager : MonoBehaviour {
 
 	private int goals = 0;
 	
-	private string[][] levels = { new[] { "ftpTest1", "ftpTest2", "ftpTest3", "ftpTest4", "blackout" }, //Find the Pail
-								  new[] { "dogfightTest" }, //Dog Fight
-								  new[] { "loopTest1", "loopTest2" }, //Loops
+	private string[][] levels = { new[] { "ftpTest1", "ftpTest2", "ftpTest3", "ftpTest4", "blackout", "Down", "factory" }, //Find the Pail
+								  new[] { "DemoLevel" }, //Dog Fight
+								  new[] { "DemoLevel"}, //Loops
 								  new[] { "DemoLevel" }, //Bombing Run
-								  new[] { "pickupsTest1",  "pickupsTest2"}, //Pickups
+								  new[] { "DemoLevel"}, //Pickups
 								  new[] { "DemoLevel" } };//Time Trials
 	
 	void Awake() {
@@ -62,6 +62,10 @@ public class LevelManager : MonoBehaviour {
 		currentScene = "Title";
 	}
 
+	public void Credits() {
+		return;
+	}
+
 	public void LoadTitle() {
 		SceneManager.LoadScene("Title", LoadSceneMode.Additive);
 	}
@@ -91,6 +95,7 @@ public class LevelManager : MonoBehaviour {
 
 	public void NextLevel() {
 		currentLevel++;
+		MusicManager.Instance.nextTrack();
 		LoadLevel();
 	}
 

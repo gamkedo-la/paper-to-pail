@@ -15,21 +15,21 @@ public class MouseToDemoScene : MonoBehaviour {
 
     private void ProgressToNextScene() {
         switch (sceneType) {
-            case SceneType.Title:
-            LevelManager.Instance.LoadLevel();
-            break;
             case SceneType.Win:
-            LevelManager.Instance.NextLevel();
-            break;
+				LevelManager.Instance.NextLevel();
+			    break;
             case SceneType.Lose:
-            LevelManager.Instance.RestartLevel();
-            break;
-        }
+			    LevelManager.Instance.RestartLevel();
+			    break;
+			case SceneType.IntroOrCredits:
+				LevelManager.Instance.SetTitle();
+				break;
+		}
     }
 }
 
 public enum SceneType {
-    Title,
     Win,
-    Lose
+    Lose,
+	IntroOrCredits
 }
