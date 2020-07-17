@@ -627,7 +627,7 @@ PrefabInstance:
     - target: {fileID: 1515416569305511575, guid: 74cda71dfaadb324f9e4fc06b1d6d97f,
         type: 3}
       propertyPath: gameplayMusic.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1515416569305511575, guid: 74cda71dfaadb324f9e4fc06b1d6d97f,
         type: 3}
@@ -658,7 +658,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameplayMusic.Array.data[5]
       value: 
-      objectReference: {fileID: 8300000, guid: 9ef2a9e4d0be47945bd673074eb79b06, type: 3}
+      objectReference: {fileID: 8300000, guid: 97661bd5ac325614a9d88b48932bec22, type: 3}
     - target: {fileID: 1515416569305511575, guid: 74cda71dfaadb324f9e4fc06b1d6d97f,
         type: 3}
       propertyPath: gameplayMusic.Array.data[6]

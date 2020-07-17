@@ -34,6 +34,11 @@ public class AIlogic : MonoBehaviour {
 	}
 	
 	void FixedUpdate() {
+
+		if (target == null) {
+			target = GameObject.FindGameObjectWithTag("Player").transform;
+		}
+
 		Vector3 inMyView = transform.InverseTransformPoint(target.position);
 		//Debug.Log(inMyView.x + " " + inMyView.y);
 		if (Mathf.Abs(inMyView.y) > altitudeThreshold) {
@@ -66,7 +71,7 @@ public class AIlogic : MonoBehaviour {
 		} else {
 			speedNow = Mathf.Lerp(speedNow, maxSpeed, speedUpPerc);
 		}
-		Debug.Log(speedNow);
+		//Debug.Log(speedNow);
 		transform.position += transform.forward * speedNow * Time.deltaTime;
 		Quaternion modelRot = transform.rotation;
 		modelRot *= initialModelRotation;

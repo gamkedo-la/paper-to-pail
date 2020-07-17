@@ -7,6 +7,7 @@ public class TitleFunctionallity : MonoBehaviour
 	public void ToGame() {
 		MusicManager.Instance.nextTrack();
 		LevelManager.Instance.LoadLevel();
+		MusicManager.Instance.nextTrack();
 	}
 
 	public void SetGameType(int gameType)
