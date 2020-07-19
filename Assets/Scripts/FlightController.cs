@@ -22,7 +22,9 @@ public class FlightController : MonoBehaviour
 	private Controller connectedController = Controller.None;
 	private Vector2 input = Vector2.zero;
 
+	public AudioClip[] rustleSoundEffects;
 	private AudioSource audioSource;
+	public float audioTimeOut = 0;
 
 	private void Start() {
 		audioSource = GetComponent<AudioSource>();
@@ -35,6 +37,15 @@ public class FlightController : MonoBehaviour
 		Rotate( );
 
 		audioSource.volume = speed / 40f;
+
+		if (Time.time >= audioTimeOut) {
+			float delay = Random.Range(0, 40/speed - 1);
+			AudioClip sfxClip = rustleSoundEffects[Random.Range(0, rustleSoundEffects.Length)];
+			audioSource.clip = sfxClip;
+			audioSource.PlayDelayed(delay);
+
+			audioTimeOut = sfxClip.length + delay + Time.time;
+		}
 	}
 
 	void FixedUpdate( )

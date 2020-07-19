@@ -101,7 +101,8 @@ public class PlaneCollider : MonoBehaviour {
 
 	public void PlayCollisionSFX()
 	{
-		var sfxClip = collisionSoundEffects[Random.Range(0, collisionSoundEffects.Length)];
+		AudioClip sfxClip = collisionSoundEffects[Random.Range(0, collisionSoundEffects.Length)];
+		audioSource.Stop();
 		audioSource.PlayOneShot(sfxClip);
 	}
 }
