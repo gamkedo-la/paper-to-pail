@@ -79,13 +79,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void SetTitle() {
-		if (!SceneManager.GetSceneByName("Title").isLoaded) {
 			Title();
-			return; 
-		}
-		SceneManager.SetActiveScene(SceneManager.GetSceneByName("Title"));
-		SceneManager.UnloadSceneAsync(currentScene);
-		currentScene = "Title";
 	}
 
 	public void LevelComplete() {
