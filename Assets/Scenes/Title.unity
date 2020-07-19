@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 461950653}
   - component: {fileID: 461950655}
   - component: {fileID: 461950654}
+  - component: {fileID: 461950656}
   m_Layer: 0
   m_Name: CreditsText
   m_TagString: Untagged
@@ -416,6 +417,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461950652}
   m_CullTransparentMesh: 0
+--- !u!114 &461950656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461950652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &584467560
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,6 +931,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Title Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874128424526992366, guid: b580eb7754dc21b439de3f513df3d02f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b580eb7754dc21b439de3f513df3d02f, type: 3}

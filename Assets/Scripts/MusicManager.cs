@@ -43,6 +43,9 @@ public class MusicManager : MonoBehaviour {
 	}
 
 	public void PlayTrack(AudioClip newTrack, bool fadeOut = true) {
+
+		scheduledTrack = null;
+
 		if (currentTrack != null && fadeOnEnd) {
 			StartCoroutine(FadeOutAndStop(currentTrack, fadeTime));
 			currentTrack.gameObject.name = currentTrack.gameObject.name + "(old)";
@@ -59,10 +62,12 @@ public class MusicManager : MonoBehaviour {
 		fadeOnEnd = fadeOut;
 
 		currentTrack.Play();
-		scheduledTrack = null;
 	}
 
 	public void PlayTrack(AudioClip newTrack, double trackEndTime, bool fadeOut = true) {
+
+		scheduledTrack = null;
+
 		if (currentTrack != null && fadeOnEnd) {
 			StartCoroutine(FadeOutAndStop(currentTrack, fadeTime));
 			currentTrack.gameObject.name = currentTrack.gameObject.name + "(old)";
@@ -79,10 +84,12 @@ public class MusicManager : MonoBehaviour {
 		fadeOnEnd = fadeOut;
 
 		currentTrack.Play();
-		scheduledTrack = null;
 	}
 
 	private void PlayTrackSchedualled(AudioClip newTrack, double schedual, bool fadeOut = false) {
+
+		scheduledTrack = null;
+
 		if (currentTrack != null && fadeOnEnd) {
 			StartCoroutine(FadeOutAndStop(currentTrack, fadeTime));
 			currentTrack.gameObject.name = currentTrack.gameObject.name + "(old)";
@@ -104,7 +111,6 @@ public class MusicManager : MonoBehaviour {
 
 		currentTrack.PlayScheduled(schedual);
 		nothingSchedualled = true;
-		scheduledTrack = null;
 	}
 
 	public void ScheduleTrack(AudioClip newTrack) {
@@ -194,7 +200,7 @@ public class MusicManager : MonoBehaviour {
 				ScheduleTrack(gameplayMusic[1]);
 				break;
 			case 1:
-				PlayTrack(gameplayMusic[4]);
+				PlayTrack(gameplayMusic[4], 112f);
 				break;
 		}
 	}

@@ -5,7 +5,6 @@ using UnityEngine;
 public class TitleFunctionallity : MonoBehaviour
 {
 	public void ToGame() {
-		MusicManager.Instance.nextTrack();
 		LevelManager.Instance.LoadLevel();
 		MusicManager.Instance.nextTrack();
 	}

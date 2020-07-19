@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour {
 
 	private int goals = 0;
 	
-	private string[][] levels = { new[] { "ftpTest1", "ftpTest2", "ftpTest3", "ftpTest4", "blackout", "Down", "factory" }, //Find the Pail
+	private string[][] levels = { new[] { "ftpTest2", "ftpTest4", "ftpTest3", "ftpTest1", "blackout", "Down", "factory" }, //Find the Pail
 								  new[] { "dogfightFactoryArena" } }; //Dog Fight
 	
 	void Awake() {
