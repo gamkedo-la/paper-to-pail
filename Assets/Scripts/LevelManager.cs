@@ -31,6 +31,18 @@ public class LevelManager : MonoBehaviour {
 		currentScene = SceneManager.GetActiveScene().name;
 	}
 
+	void Update() {
+		if (Input.GetButton("NextLevel")) {
+			currentLevel++;
+			LoadLevel();
+		}
+
+		if (Input.GetButton("LastLevel")) {
+			currentLevel--;
+			LoadLevel();
+		}
+	}
+
 	public void LoadLevel() {
 		if (currentLevel >= levels[(int)currentGameType].Length) {
 			currentLevel = 0;

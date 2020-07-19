@@ -8,7 +8,7 @@ public class Dogfighting : MonoBehaviour {
 
     void Update() {
 
-        if (Input.GetButtonDown("Submit") || Input.GetMouseButtonDown(0)) {
+        if (Input.GetButtonDown("Submit") || Input.GetMouseButtonDown(0) && Time.timeScale > 0) {
             GameObject newShot = Instantiate(shotPrefab);
             newShot.transform.position = gameObject.transform.position;
             newShot.transform.rotation = gameObject.transform.rotation;
