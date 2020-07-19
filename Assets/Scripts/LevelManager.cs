@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,11 +16,7 @@ public class LevelManager : MonoBehaviour {
 	private int goals = 0;
 	
 	private string[][] levels = { new[] { "ftpTest1", "ftpTest2", "ftpTest3", "ftpTest4", "blackout", "Down", "factory" }, //Find the Pail
-								  new[] { "DemoLevel" }, //Dog Fight
-								  new[] { "DemoLevel"}, //Loops
-								  new[] { "DemoLevel" }, //Bombing Run
-								  new[] { "DemoLevel"}, //Pickups
-								  new[] { "DemoLevel" } };//Time Trials
+								  new[] { "dogfightFactoryArena" } }; //Dog Fight
 	
 	void Awake() {
 		if (Instance == null) {
@@ -35,7 +32,6 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void LoadLevel() {
-		
 		if (currentLevel >= levels[(int)currentGameType].Length) {
 			currentLevel = 0;
 			SceneManager.LoadScene("Title");
@@ -95,8 +91,8 @@ public class LevelManager : MonoBehaviour {
 
 	public void NextLevel() {
 		currentLevel++;
-		MusicManager.Instance.nextTrack();
 		LoadLevel();
+		MusicManager.Instance.nextTrack();
 	}
 
 	public void RestartLevel() {
@@ -105,12 +101,10 @@ public class LevelManager : MonoBehaviour {
 
 	public void AddGoal() {
 		goals++;
-		Debug.Log(goals);
 	}
 
 	public void RemoveGoal() {
 		goals--;
-		Debug.Log(goals);
 		if (goals <= 0) {
 			Win();
 		}
@@ -119,9 +113,5 @@ public class LevelManager : MonoBehaviour {
 
 public enum GameType {
 	FindThePail,
-	DogFight,
-	Loops,
-	BombingRun,
-	PickUps,
-	TimeTrial
+	DogFight
 }

@@ -165,26 +165,36 @@ public class MusicManager : MonoBehaviour {
 	}
 
 	//Hard cody stuff that you shouldn't do this way
-	public AudioClip[] gameplayMusic = new AudioClip[4];
+	public AudioClip[] gameplayMusic = new AudioClip[6];
 	public int currentIndex = 1;
 
 	public void nextTrack() {
-		int newIndex = Random.Range(0, 3);
+		int newIndex = Random.Range(0, 2);
 		while (newIndex == currentIndex) {
-			newIndex = Random.Range(0, 3);
+			newIndex = Random.Range(0, 2);
 		}
 		currentIndex = newIndex;
 
-		switch(currentIndex) {
+		if (LevelManager.Instance.currentScene == "Title") {
+			PlayTrack(gameplayMusic[5]);
+			return;
+		} else if (LevelManager.Instance.currentGameType == GameType.DogFight &&
+			LevelManager.Instance.currentLevel <= 0) {
+			PlayTrack(gameplayMusic[2]);
+			ScheduleTrack(gameplayMusic[3]);
+			return;
+		} else if (LevelManager.Instance.currentGameType == GameType.DogFight &&
+			LevelManager.Instance.currentLevel > 0) {
+			return;
+		}
+
+		switch (currentIndex) {
 			case 0:
 				PlayTrack(gameplayMusic[0]);
 				ScheduleTrack(gameplayMusic[1]);
 				break;
 			case 1:
-				PlayTrack(gameplayMusic[2]);
-				break;
-			case 2:
-				PlayTrack(gameplayMusic[3]);
+				PlayTrack(gameplayMusic[4]);
 				break;
 		}
 	}
