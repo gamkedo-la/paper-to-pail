@@ -11,7 +11,7 @@ enum Controller
 
 public class FlightController : MonoBehaviour
 {
-	public float speed = 20f;
+	public float speed = 10f;
 	public float bank = 50f;
 	public float pull = 30f;
 	public float pickup = 10f;
@@ -22,11 +22,19 @@ public class FlightController : MonoBehaviour
 	private Controller connectedController = Controller.None;
 	private Vector2 input = Vector2.zero;
 
+	private AudioSource audioSource;
+
+	private void Start() {
+		audioSource = GetComponent<AudioSource>();
+	}
+
 	void Update()
 	{
 		GetInput( );
 		Move( );
 		Rotate( );
+
+		audioSource.volume = speed / 40f;
 	}
 
 	void FixedUpdate( )
