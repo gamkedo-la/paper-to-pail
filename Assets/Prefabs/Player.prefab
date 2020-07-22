@@ -14942,6 +14942,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 87971ce4ad5704a42872205103d91b69, type: 3}
   - {fileID: 8300000, guid: 237be6db50daab04dadc6e55fedd7495, type: 3}
   - {fileID: 8300000, guid: 806d0bc669c2ce844ba5969ea62401d5, type: 3}
+  audioTimeOut: 0
 --- !u!114 &5271187572601487733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15168,14 +15169,14 @@ MonoBehaviour:
   holdOnWin: 3
   holdOnLose: 1.5
   collisionSoundEffects:
-  - {fileID: 8300000, guid: 2231e83104f7c6c4d9a3f68a439b34c4, type: 3}
-  - {fileID: 8300000, guid: 3102cab31ce65c74f9ce6acbdd3fa8d9, type: 3}
   - {fileID: 8300000, guid: 4234a7476ddc5124fbb80b56cb7bf296, type: 3}
   - {fileID: 8300000, guid: 3546d6fea2eab5a4ea5eecb08c565f4f, type: 3}
   - {fileID: 8300000, guid: 0e2cfe63235b26f47b43e148ae6783cf, type: 3}
   - {fileID: 8300000, guid: 521d4a8906cc827449708660113f3dad, type: 3}
   - {fileID: 8300000, guid: 88e026b4501ef5b4e98c037175d484e9, type: 3}
   - {fileID: 8300000, guid: a8ad9ac14c4b6da4ba17f985ceb95004, type: 3}
+  - {fileID: 8300000, guid: 2231e83104f7c6c4d9a3f68a439b34c4, type: 3}
+  - {fileID: 8300000, guid: 3102cab31ce65c74f9ce6acbdd3fa8d9, type: 3}
 --- !u!65 &7133506929640095054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15242,7 +15243,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -15275,7 +15276,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

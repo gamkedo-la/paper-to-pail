@@ -16,6 +16,11 @@ public class AIlogic : MonoBehaviour {
 	private float slowDownPerc = 0.15f;
 	private float speedUpPerc = 0.1f;
 
+	public AudioClip[] rustleSoundEffects;
+	public AudioClip[] collisionSoundEffects;
+	private AudioSource audioSource;
+	public float audioTimeOut = 0;
+
 	private float planeRoll = 0.0f;
 	private float planePitch = 0.0f;
 	private Quaternion initialModelRotation = Quaternion.identity;
@@ -31,8 +36,24 @@ public class AIlogic : MonoBehaviour {
 	void Start() {
 		initialModelRotation = myPlaneModel.rotation;
 		LevelManager.Instance.AddGoal();
+
+		audioSource = GetComponent<AudioSource>();
 	}
-	
+
+	void Update() {
+
+
+		audioSource.volume = speedNow / 40f;
+
+		if (Time.time >= audioTimeOut) {
+			AudioClip sfxClip = rustleSoundEffects[Random.Range(0, rustleSoundEffects.Length)];
+			audioSource.PlayOneShot(sfxClip);
+
+			float delay = Random.Range(0, 80 / speedNow - 1);
+			audioTimeOut = sfxClip.length + delay + Time.time;
+		}
+	}
+
 	void FixedUpdate() {
 
 		if (target == null) {
@@ -85,5 +106,10 @@ public class AIlogic : MonoBehaviour {
 			LevelManager.Instance.RemoveGoal();
 			Destroy(gameObject);
 		}
+	}
+
+	private void OnDestroy() {
+		AudioClip sfxClip = collisionSoundEffects[Random.Range(0, collisionSoundEffects.Length)];
+		AudioSource.PlayClipAtPoint(sfxClip, gameObject.transform.position, 8.0f);
 	}
 }

@@ -50,6 +50,10 @@ public class PlaneCollider : MonoBehaviour {
 			pushPlane += other.gameObject.transform.forward;
 
 		} else if (other.gameObject.CompareTag("DirectZone")) {
+			FlightController flight = gameObject.GetComponent<FlightController>();
+			AudioClip sfxClip = flight.rustleSoundEffects[Random.Range(0, flight.rustleSoundEffects.Length)];
+			audioSource.PlayOneShot(sfxClip);
+
 			directPlane = other.transform.rotation;
 			currentDirectZones++;
 
@@ -57,6 +61,10 @@ public class PlaneCollider : MonoBehaviour {
 			gameObject.GetComponent<FlightController>().speed *= 1.1f;
 
 		} else if (other.gameObject.CompareTag("Boost")) {
+			FlightController flight = gameObject.GetComponent<FlightController>();
+			AudioClip sfxClip = flight.rustleSoundEffects[Random.Range(0, flight.rustleSoundEffects.Length)];
+			audioSource.PlayOneShot(sfxClip);
+
 			gameObject.GetComponent<FlightController>().speed *= 1.5f;
 			other.gameObject.SetActive(false);
 

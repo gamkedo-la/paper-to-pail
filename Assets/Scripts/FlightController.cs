@@ -36,15 +36,14 @@ public class FlightController : MonoBehaviour
 		Move( );
 		Rotate( );
 
-		audioSource.volume = speed / 40f;
+		audioSource.volume = speed / 30f;
 
 		if (Time.time >= audioTimeOut) {
-			float delay = Random.Range(0, 40/speed - 1);
 			AudioClip sfxClip = rustleSoundEffects[Random.Range(0, rustleSoundEffects.Length)];
-			audioSource.clip = sfxClip;
-			audioSource.PlayDelayed(delay);
+			audioSource.PlayOneShot(sfxClip);
 
-			audioTimeOut = sfxClip.length + delay + Time.time;
+			float delay = Random.Range(0, 40 / speed - 1);
+			audioTimeOut = sfxClip.length/2 + delay + Time.time;
 		}
 	}
 

@@ -10264,6 +10264,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 8963490897232388672, guid: cb16aa7374f0e364f920f382c3b760ef,
     type: 3}
+  shotSoundEffect:
+  - {fileID: 8300000, guid: cabd8e27f67ea0640b14e33adea4c93b, type: 3}
+  - {fileID: 8300000, guid: 479a0e56ef72c474a843dcf303a23f02, type: 3}
+  - {fileID: 8300000, guid: a0b26ae6413013e40b0fb4d8bae1699d, type: 3}
+  - {fileID: 8300000, guid: 3a7756bcd2f9e5a42bbc20565ec9e2cd, type: 3}
+  - {fileID: 8300000, guid: 9d786620e2683244793fc0d9b51a2516, type: 3}
+  - {fileID: 8300000, guid: d0f4ef8800844644da5667bfc118dc51, type: 3}
+  - {fileID: 8300000, guid: bc892ff71fd46f04fb57108e6ca6ccb4, type: 3}
+  - {fileID: 8300000, guid: b19c0a1d7ef3a304da5c1a30c6c17b08, type: 3}
+  - {fileID: 8300000, guid: 1a172269c2432bf439a645a4a1289bfa, type: 3}
+  - {fileID: 8300000, guid: 0decae70d8573e74dbb525015602302e, type: 3}
+  - {fileID: 8300000, guid: ed2bb1c15283a9a4897f0a6f396bf2d2, type: 3}
+  - {fileID: 8300000, guid: 78d5b8b8def088c49ba0bf1aae1998eb, type: 3}
+  - {fileID: 8300000, guid: b29768059f054f54285d36598f3fe097, type: 3}
+  - {fileID: 8300000, guid: cf0118ec342730e4a918d603741ad966, type: 3}
+  - {fileID: 8300000, guid: 4a83dba5cf85f7a4c9520f6b9f1f52e8, type: 3}
+  - {fileID: 8300000, guid: 8c8a4beab10bb6843bf5c2cae7009b5f, type: 3}
+  - {fileID: 8300000, guid: 2b5a856a1fdca384fbd2d1db72f8d9f8, type: 3}
 --- !u!4 &1511759831 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2103492131561502272, guid: f52fc08c0b83b724796abc2c18315cae,
