@@ -362,7 +362,8 @@ MonoBehaviour:
     Michael "Misha" Fewkes: Project lead,
     core gameplay, boost item, lose physics, main input, level switching, wind push
     zones, music manager, dogfight AI, pickup mode, webGL video playing support,
-    clown integration, assorted bugfixes and touch ups
+    clown integration, assorted bugfixes and touch ups, crash sound effects, flight
+    sound effects, shot sound effects, dynamic sound integration
 
 
     Muhammed "EyeForcz"
@@ -383,32 +384,32 @@ MonoBehaviour:
     Christer
     "McFunkypants" Kaitila: Gradient material tones (wood, metal, sky, skin), mesh
     and block prefabs, models (dresser, countertop, cabinets, kid blocks, bed, bunk
-    bed, cat castle), wingtip trail effect, title music integration, recycle bin
-    improvements, factory level, dogfight target leading
+    bed, cat castle), wingtip trail effect, recycle bin improvements, factory level,
+    dogfight target leading
 
 
-    Alan Zaring: Title
-    music, recycle bin music, dogfight music
+    Alan Zaring: Title music, recycle bin music, dogfight
+    music
 
 
-    Brian Nielsen: Pause menu, controller
-    support for menus, additional title menu work
+    Brian Nielsen: Pause menu, controller support for menus, additional
+    title menu work
 
 
-    Lexi "LexiGameDev" Kunkel:
-    Main menu UI buttons, connection to options menu, menu background concepts
+    Lexi "LexiGameDev" Kunkel: Main menu UI buttons, connection
+    to options menu, menu background concepts
 
 
-    Bilal
-    A. Cheema: Level design for "Down"
+    Bilal A. Cheema: Level design
+    for "Down"
 
 
     Simon J Hoffiz: Original level music
 
 
-    This
-    game was created by members of HomeTeamGameDev.com (Apollo group) - check out
-    our site to make freeware games with us!'
+    This game was created
+    by members of HomeTeamGameDev.com (Apollo group) - check out our site to make
+    freeware games with us!'
 --- !u!222 &461950655
 CanvasRenderer:
   m_ObjectHideFlags: 0
